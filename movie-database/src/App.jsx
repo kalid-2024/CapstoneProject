@@ -12,10 +12,6 @@ import LandingPage from './components/Pages/LandingPage';
           index: true,
           element: <LandingPage />,
         },
-        {
-          path: "/search",
-          element: <p>Search for Movies</p>,
-        },
       ],
     },
 
