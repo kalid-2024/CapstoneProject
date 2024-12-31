@@ -9,3 +9,43 @@
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
+
+
+/* Base styles for light mode */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white; 
+   color: black;
+}
+
+/* Dark mode styles when toggleSwitch is checked */
+body.dark {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: rgb(31 41 55);
+  color: white;
+}
+
+.toggleSwitch {
+  display: none; /* Hide the checkbox visually */
+}
+
+.lightSwitch {
+  display: block; /* Show dark switch button initially */
+}
+
+.darkSwitch {
+  display: none; /* Hide light switch button initially */
+}
+
+/* Toggle visibility based on the checkbox state */
+.toggleSwitch:checked ~  .lightSwitch{
+  display: none; /* Hide dark switch button */
+}
+
+.toggleSwitch:checked ~ .darkSwitch {
+  display: block; /* Show light switch button */
+}
+
+body.about-page .hamburger-menu {
+  display: none;
+}
