@@ -1,24 +1,14 @@
-import { RouterProvider, createBrowserRouter} from 'react-router-dom';
-import PageLayout from './components/layout/PageLayout';
-import LandingPage from './components/Pages/LandingPage';
+import React from 'react'
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <PageLayout />,
-      children: [
-        {
-          path: '/',
-          index: true,
-          element: <LandingPage />,
-        },
-      ],
-    },
+const App = () => {
 
-  ])
 
-  function App() {
-  return  <RouterProvider  router={router}/>;
+
+
+  
+  return (
+    <div>App</div>
+  )
 }
 
 export default App
