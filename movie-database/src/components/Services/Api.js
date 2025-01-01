@@ -18,6 +18,6 @@ export const fetchMovies = async (query, page=1)=> {
 
 export const fetchMovieDetail = async (id)=> {
         const response = await axios.get(`${BASE_URL}?apikey=${API_KEY}&i=${id}`);
-   if(!response.ok) throw new Error("Failed to fetch movie details");
+   if(!response.ok) throw new Error("Network Response was not ok! Failed to fetch movie details");
         return response.data;
 }
