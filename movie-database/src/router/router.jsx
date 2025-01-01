@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import PageLayout from '../components/layout/PageLayout';
 import LandingPage from '../components/Pages/LandingPage';
 import About from '../components/Pages/About';
+import MovieCard from '../components/MovieCard';
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
           path: "/About",
           element: <About/>,
         },
+        {
+          path: "/MovieDetail/:id",
+          element: <MovieCard/>,
+        }
         // {
         //   path:"/catagory/action",
         //   element: action ,
