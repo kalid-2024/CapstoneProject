@@ -14,7 +14,7 @@ import React, { useState } from 'react';
     };
   
     return (
-      <form onSubmit={handleSubmit} className="flex mx-auto items-center justify-center gap-4 mb-6">
+      <form onSubmit={handleSubmit} className="flex flex-col mx-auto items-center justify-center gap-4 mb-6">
         <input
           type="text"
           placeholder="Search movies..."
