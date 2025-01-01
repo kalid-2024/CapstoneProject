@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import PageLayout from '../components/layout/PageLayout';
 import LandingPage from '../components/Pages/LandingPage';
 import About from '../components/Pages/About';
-import MovieCard from '../components/MovieCard';
+import MovieDetails from '../components/MovieCard';
 
 
 const router = createBrowserRouter([
