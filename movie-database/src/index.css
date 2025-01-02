@@ -50,11 +50,37 @@ body.about-page .hamburger-menu {
   display: none;
 }
 
-
 .input{
   border-width: 1px;
 }
 
 .input-bordered {
 border-color: var(--fallback-bc,oklch(var(--bc)/.2));
+}
+
+.request-loader:before{
+  animation-delay: 0.5s;
+}
+
+.request-loader:after, .request-loader:before {
+  content: "";
+    opacity: 0;
+    display: flex
+;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: 0;
+    bottom: 0;
+    height: calc(100% + 16px);
+    width: calc(100% + 16px);
+    border: 8px solid rgba(0, 0, 0, .2);
+    border-radius: 100%;
+    animation-name: ripple;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.65,0,.34,1);
 }
