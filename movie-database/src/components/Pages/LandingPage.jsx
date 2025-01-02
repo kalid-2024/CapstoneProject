@@ -5,6 +5,7 @@ import SearchBar from '../form/SearchBar'
 import {fetchMovies , fetchMovieDetail} from '../Services/Api'
 import MovieCard from '../MovieCard'
 import errorimage from '../../assets/images/error.png'
+import MovieDetails from '../MovieDetails'
 
 
 const LandingPage = () => {
@@ -56,7 +57,6 @@ const LandingPage = () => {
         
        <SearchBar  onSearch={handleSearch} />
 
-
         <div className='flex flex-wrap justify-center gap-2 mt-4 max-w-[600px] mx-auto'>
           <select className=" text-black  border rounded-xs w-auto min-w-[120px]  font-semibold">
             <option value>Media Type</option>
@@ -83,7 +83,9 @@ const LandingPage = () => {
                 <img src={errorimage} alt="search result not found!" className='w-24 h-24 sm:w-32 sm:h-32  mx-auto mb-4'/>
               <p>{error}</p>
               </div>)  : isLoading ? (<p>Loading...</p>) : movies.length >0? (
+
               <MovieCard movies={movies}/>
+              
             ):(
             <div>
                   <img src={empty} alt="No Search Results" className='w-24 h-24 sm:w-32 sm:h-32  mx-auto mb-4'/>

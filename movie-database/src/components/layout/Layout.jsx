@@ -7,8 +7,8 @@ const Layout = (props) => {
 
   return (
     <div className='mx-auto '>
-    <Hero children={heroContent}/>
-    {pageContent}
+      <Hero children={heroContent}/>
+      {pageContent}
     </div>
   )
 }
