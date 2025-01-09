@@ -38,33 +38,19 @@
   }, [id]);  // Re-fetch if `id` changes
 
 
- if(loading) {
-  return (<div className="w-full h-full "><p className="mx-auto" >Loading movie details...</p></div>);
- }
-if(error){
-  return(<div>{error}</div>)
-}
-
+  if(loading){
+    return (<div className="w-full h-full "><p className="mx-auto" >Loading movie details...</p></div>);
+      }  
+  if(error){
+    return (<div>{error}</div>)
+  };
+  
   return (
-    
 <div className='max-w-7xl mx-auto px-4 sm:py-12 py-4 relative z-10'>
   <div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12'>
-    <div className="md:col-span-1 relative">
+        <div className="md:col-span-1 relative">
          <img src={movie.Poster} alt={movie.Title} className="w-full rounded-xl shadow-2xl"/>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex flex-col items-center">
-            <div className="relative mb-2"><div className="request-loader">
-                <button className="btn btn-ghost btn-circle btn-lg group bg-black bg-opacity-50 hover:bg-opacity-75 transition duration-300">
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" className="text-xl text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <span className="text-sm font-bold text-white bg-black bg-opacity-50 px-4 py-2 rounded">Watch Trailer</span>
-          </div>
         </div>
-      </div>
     <div className="md:col-span-2 sm:pt-8 pt-0 md:pt-28">
       <div className="relative mb-4 pr-16">
         <div className="max-w-full">
@@ -89,14 +75,14 @@ if(error){
         <a href={`https://www.imdb.com/movie/${movie.imdbID}`}  target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline flex items-center font-bold">imdb</a>
       </div>
       <div className="mb-6">
-        {movie.Genre &&
-          movie.Genre.split(', ').map((genre, index) => (
+        {movie.Genre  && movie.Genre.split(", ").map((genre,index)=>(
             <span
-              key={index}
-              className={`inline-block px-3 py-2 mr-2 mb-2 text-sm font-bold text-white rounded-full bg-${index % 3 === 0 ? 'blue' : index % 3 === 1 ? 'green' : 'yellow'}-600`}
+            key={index}
+            className={`inline-block px-3 py-2 mr-2 mb-2 text-sm font-bold text-white rounded-full bg-${index % 3 === 0 ? 'blue':index % 3 === 1 ?'green':'red'}-600`}
             >
               {genre}
             </span>
+        
           ))}
       </div>
       <p className="text-base md:text-lg mb-6">
@@ -127,7 +113,25 @@ if(error){
                   </div>
                   ))}
                 </div>
-              
+                 <h2 className="text-xl md:text-2xl font-semibold mb-4 mt-4">Director</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                 
+                 {movie.Director &&
+                 movie.Director.split(', ').map((director,index) => (
+                  <div key={index} className="flex items-center p-2 rounded-lg shadow-md bg-theme-adaptive border border-theme-adaptive">
+                    <h3 className="text-sm font-semibold">{director}</h3>
+                  </div>
+                 ))}
+                </div>
+                <h2 className="text-xl md:text-2xl font-semibold mb-4 mt-4" >Writers</h2> 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                {movie.Writer &&
+                movie.Writer.split(', ').map((writer, index) => (
+                  <div key={index} className="flex items-center p-2 rounded-lg shadow-md bg-theme-adaptive border border-theme-adaptive">
+                    <h3 className="text-sm font-semibold">{writer}</h3>
+                  </div>
+                  ))}
+                </div>
         </div>
       </div>
     </div>
