@@ -1,12 +1,13 @@
 import React from 'react'
 import '../../index.css'
+import Profile from '../../assets/images/profile.jpg'
 
 const About = () => {
   return (
     <div className='about-page'>
     <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-12 mb-12 max-w-6xl mx-auto">
         <div className="w-full lg:w-1/2">
-            <img src="" alt="My-Image" className="rounded-lg shadow-lg w-full h-auto" />
+            <img src={Profile} alt="My-Image" className="rounded-lg shadow-lg w-full h-auto" />
         </div>
         <div className="w-full lg:w-1/2">
             <h1 className='text-3xl sm:text-4xl font-bold mb-4 '>Khalid Mohammed Abdela</h1>
