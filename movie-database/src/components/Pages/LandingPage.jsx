@@ -57,7 +57,7 @@ const LandingPage = () => {
         
        <SearchBar  onSearch={handleSearch} />
 
-        <div className='flex flex-wrap justify-center gap-2 mt-4 max-w-[600px] mx-auto'>
+        {/* <div className='flex flex-wrap justify-center gap-2 mt-4 max-w-[600px] mx-auto'>
           <select className=" text-black  border rounded-xs w-auto min-w-[120px]  font-semibold">
             <option value>Media Type</option>
             <option value="movie">Movie</option>
@@ -73,7 +73,7 @@ const LandingPage = () => {
             <option value="vote_average.desc">Highest Rating</option>
             <option value="vote_average.asc">Lowest Rating</option>
           </select>
-        </div>
+        </div> */}
 
       </div>
     }
