@@ -1,13 +1,13 @@
-button{
+ button{
     border-radius: 9999px;
     padding: 1rem;
 }
 
-button:hover{
-    background-color: rgb(203 213 225 / var(--tw-bg-opacity, 1));
+.pagination button:hover{
+    background-color: rgb(203 213 225 / var(--tw-bg-opacity, 0.9));  
 }
 
-button.active{
+ button.active{
     font-weight:900;
     border-color:#101010;
     background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
