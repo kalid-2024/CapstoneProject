@@ -58,7 +58,7 @@ const currentPosts = movies.slice(firstPostIndex,lastPostIndex);
   return (
   <Layout 
     heroContent={
-      <div className="text-center mb-48 "> 
+      <div className="text-center mb-32 "> 
         <h1 className='text-green-600  text-6xl mt-16 font-bold'>What would you like to watch now?</h1>
         <p className='text-green-600 text-2xl mt-8 mb-8 font-bold'>Your ultimate movie and Tv show search engine.</p>
         
@@ -91,7 +91,7 @@ const currentPosts = movies.slice(firstPostIndex,lastPostIndex);
               <p>{error}</p>
               </div>)  : isLoading ? (<p>Loading...</p>) : movies.length >0? (
                 <div >
-                  <h1 className='pb-44 '>Search Results</h1>
+                  <h1 className='pb-16 text-xl'>Search Results</h1>
                   <MovieCard movies={currentPosts}/>
                   <Pagination
                    totalPosts={movies.length} 
