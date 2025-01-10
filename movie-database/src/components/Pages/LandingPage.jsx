@@ -5,21 +5,25 @@ import SearchBar from '../form/SearchBar'
 import {fetchMovies , fetchMovieDetail} from '../Services/Api'
 import MovieCard from '../MovieCard'
 import errorimage from '../../assets/images/error.png'
-import MovieDetails from '../MovieDetails'
+import Pagination from '../common/Pagination'
 
 
 const LandingPage = () => {
   const [movies, setMovies] = useState([]);
-  const [searchValue, setSearchValue] = useState(" ");
+  const [searchValue, setSearchValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage,setPostsPerPage] = useState(8);
 
 
 
   useEffect(()=>{
 
     const fetchData = async (searchValue)=> {
+      if (!searchValue.trim()) return;
       setIsLoading(true);
+      setError(null); // Clear previous errors
       try{
       const data = await fetchMovies(searchValue);
       if (data.Response === "True") {
@@ -47,6 +51,9 @@ const LandingPage = () => {
       // setSelectedMovie(null); // Reset selected movie when a new search is performed
     };
 
+const lastPostIndex = currentPage*postsPerPage;
+const firstPostIndex = lastPostIndex-postsPerPage;
+const currentPosts = movies.slice(firstPostIndex,lastPostIndex);
 
   return (
   <Layout 
@@ -83,9 +90,15 @@ const LandingPage = () => {
                 <img src={errorimage} alt="search result not found!" className='w-24 h-24 sm:w-32 sm:h-32  mx-auto mb-4'/>
               <p>{error}</p>
               </div>)  : isLoading ? (<p>Loading...</p>) : movies.length >0? (
-
-              <MovieCard movies={movies}/>
-              
+                <div >
+                  <h1 className='pb-44 '>Search Results</h1>
+                  <MovieCard movies={currentPosts}/>
+                  <Pagination
+                   totalPosts={movies.length} 
+                   postsPerPage={postsPerPage}
+                   setCurrentPage={setCurrentPage} 
+                   currentPage={currentPage}/>
+              </div>
             ):(
             <div>
                   <img src={empty} alt="No Search Results" className='w-24 h-24 sm:w-32 sm:h-32  mx-auto mb-4'/>
