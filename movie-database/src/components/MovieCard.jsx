@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 const MovieCard = ({ movies }) => {  
       return (
-          <div className='grid grid-cols-2  sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 '>
+          <div className='grid grid-cols-2  sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 '>
             
               {movies.map((movie,index) => (
                   <Link  to={`/MovieDetails/${movie.imdbID}`}  key={index} className = 'flex flex-col items-center justify-center gap-4   transition  ease-in-out  hover:-translate-y-1 hover:scale-110  hover:opacity-90  duration-300 '>
