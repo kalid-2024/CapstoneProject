@@ -2,8 +2,8 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom';
 import PageLayout from '../components/layout/PageLayout';
 import LandingPage from '../components/Pages/LandingPage';
-import About from '../components/Pages/About';
 import MovieDetails from '../components/MovieDetails';
+import About from '../components/Pages/about'
 
 
 const router = createBrowserRouter([
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
           element: <LandingPage/> ,
         },
         {
-          path: "/About",
+          path: "/about",
           element: <About/>,
         },
         {
