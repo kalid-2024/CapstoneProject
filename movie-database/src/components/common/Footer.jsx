@@ -15,7 +15,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center lg:items-end w-full lg:w-auto">
         <nav className="flex flex-wrap justify-center lg:justify-end items-center gap-2 sm:gap-6 mb-4 sm:mb-8 lg:pr-4">
-          <Link  to="/about" target="_blank" className="text-green-600 font-extrabold px-2 hover:underline">About Me</Link>
+          <Link  to="/About" target="_blank" className="text-green-600 font-extrabold px-2 hover:underline">About Me</Link>
           <a href="https://kalidmohammed236@gmail.com" target="_blank" className="text-green-600 font-extrabold px-2 hover:underline ">Get in Touch</a>
           <a href="https://www.omdbapi.com/" target="_blank" className="text-green-600 font-extrabold px-2  hover:underline "> API</a>
         </nav>
